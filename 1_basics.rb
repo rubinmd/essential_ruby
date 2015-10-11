@@ -16,7 +16,6 @@ capitalized_last = last.capitalize
 #   the left belongs to*
 
 # Some methods take inputs, called 'arguments':
-
 first = capitalized_first.gsub(" ", "")
 last = capitalized_last.gsub(" ", "")
 

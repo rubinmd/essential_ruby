@@ -28,7 +28,7 @@
 #  - after we've looked at every number, the running total is the sum
 
 def sum(list_of_numbers)
-  running_total = 0
+  running_total = 0.0
   list_of_numbers.each do |number|
     running_total = running_total + number
   end
@@ -43,11 +43,9 @@ end
 #  - then we divide the sum by the number of elements in the set
 
 def mean(list_of_numbers)
-  # Let's re-use the work we did above in the sum method
-
-  # ====================
-  # Your code goes here.
-  # ====================
+  mean = 0.0
+  mean = (sum(list_of_numbers)/(list_of_numbers.count)).to_f
+  return mean.to_f
 end
 
 # VARIANCE
@@ -61,10 +59,12 @@ end
 
 def variance(list_of_numbers)
   # Let's re-use the work we did above in the mean method
-
-  # ====================
-  # Your code goes here.
-  # ====================
+  mean=mean(list_of_numbers)
+  variances=[]
+  list_of_numbers.each do |number|
+    variances.push((mean-number)**2)
+  end
+return mean(variances)
 end
 
 # STANDARD DEVIATION
@@ -73,15 +73,15 @@ end
 #  - take the square root of the variance
 
 def standard_deviation(list_of_numbers)
-  # ====================
-  # Your code goes here.
-  # ====================
+  var=variance(list_of_numbers)
+return (Math.sqrt(var))
 end
 
 
 # Finally, everything above allows us to do the following. You don't need to modify anything below.
-
 first_dataset = [93, 65, 87, 68, 2, 64, 36, 96, 45, 47]
+puts first_dataset.sum
+puts sum(first_dataset)
 stdev1 = standard_deviation(first_dataset)
 puts "The standard deviation of the first dataset is #{stdev1.round(2)}."
 
